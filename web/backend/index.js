@@ -39,6 +39,7 @@ exports.handler = (event, context, callback) => {
             TableName: process.env.tableName
         };
         docClient.scan(params, (err, data) => {
+            data.msg="Hello Rhee!";
             const result = err
                 ? [err]
                 : [err, {
